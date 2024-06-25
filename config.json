@@ -1,0 +1,7 @@
+{   
+    "baseURL" : "",
+    "txtFileAriaLabel" : "a[aria-label='Messages_file.txt']",
+    "nextPageAriaLabel" : "[aria-label='Next page']",
+    "pageNumberLabel" : ".pageNumberLabel-225",
+    "viewportLabel" : ".ag-body-viewport.ag-row-no-animation.ag-layout-normal"
+}

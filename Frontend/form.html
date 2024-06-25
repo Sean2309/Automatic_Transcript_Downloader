@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CRM Extension Form</title>
+  <script src="form.js"></script>
+  <style>
+    body {
+      font-size: 18px;
+    }
+    h1{
+      font-size: 22px;
+    }
+    h2 {
+      font-size : 20px
+    }
+    label, select, input, button {
+      font-size: 18px; 
+    }
+  </style>
+</head>
+<body>
+  <h1>This is the form to input config details for the CRM Browser Extension</h1> <br>
+  
+  <label>Config JSON File to Upload:</label><br><br>
+  <input id="inputConfigFile" type="file" accept=".json"> <br><br>
+
+  <div>
+    <h2>Timeframe Selection Options:</h2>
+    <p> 1. 1 Day        => Download all transcripts from <b>1 day</b> before to current date</p>
+    <p> 2. 1 Week       => Download all transcripts from <b>1 week</b> before to current date</p>
+    <p> 3. 1 Month      => Download all transcripts from <b>1 month</b> before to current date</p>
+    <p> 4. Custom Range => Download all transcripts from a <b>custom range of dates</b></p>
+    <br><br>
+  </div>
+  <!-- Dropdown list -->
+  <label for="timeframe">Select a Timeframe:</label>
+  <select id="timeframe" name="timeframe">
+    <option value="1day">1 Day</option>
+    <option value="1week">1 Week</option>
+    <option value="1month">1 Month</option>
+    <option value="custom">Custom Date</option>
+  </select>
+  <br><br>
+  
+  <!-- Custom date input -->
+  <div id="customDate" style="display:none;">
+    <label for="startdate">Start Date:</label>
+    <input type="date" id="startdate" name="startdate">
+    <label for="enddate">End Date:</label>
+    <input type="date" id="enddate" name="enddate">
+  </div>
+  
+
+  <button id="startDownload">Start Download</button>
+  <div id="output"></div>
+</body>
+</html>

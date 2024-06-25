@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "SOS Extension",
+  "version": "1.0",
+  "permissions": [
+    "activeTab", 
+    "storage", 
+    "scripting", 
+    "tabs", 
+    "webNavigation"
+  ],
+  "background": {
+    "service_worker": "./Backend/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["Backend/content.js", "helperFunctions/jquery-3.7.1.min.js", "helperFunctions/date.js", "helperFunctions/delay.js", "helperFunctions/find.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "action": {
+    "default_popup": "Frontend/popup.html"
+  },
+  "host_permissions": ["<all_urls>"],
+  "web_accessible_resources": [
+    {
+      "resources": ["Backend/content.js"],
+      "matches": ["https://<org>.crm5.dynamics.com/*"] 
+    }
+  ]
+
+  
+}
